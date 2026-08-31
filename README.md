@@ -81,16 +81,6 @@ flowchart LR
 
 ---
 
-## Skills Demonstrated
-
-- **Agentic design patterns** — implementing a generate → execute → reflect → refine loop, including feeding real execution output/errors back into the LLM rather than relying on single-shot generation.
-- **LLM application development** — prompt design for structured (JSON) outputs, and defensively parsing model responses (handling markdown-fenced JSON and malformed output) instead of assuming a well-formed reply.
-- **Debugging & root-cause analysis** — diagnosed a subtle data bug (a signed delta column silently inverting a ranking query) by reproducing it against real data, then found and fixed a second, compounding bug where fragile JSON parsing was silently discarding the model's own proposed fix.
-- **Full-stack prototyping** — an interactive Streamlit front end (chat interface, session state, file upload, sidebar configuration) built on top of a UI-agnostic agent module.
-- **Provider abstraction** — using [aisuite](https://github.com/andrewyng/aisuite) to keep the agent logic provider-agnostic (`"openai:gpt-4.1-mini"`-style model strings) instead of hardcoding a single vendor's SDK.
-
----
-
 ## Tech Stack
 
 | Layer   | Choice                                 |
@@ -148,16 +138,6 @@ The app opens automatically at `http://localhost:8501`. On first launch it draws
 
 ---
 
-## Known Limitations
-
-- **Single-table focus** — `utils.get_schema` currently targets one hardcoded `transactions` table; arbitrary multi-table schemas would need more general schema introspection.
-- **No sandboxing** — SQL runs directly against the local SQLite file, which is fine for a local/portfolio demo but not for untrusted multi-user deployment.
-- **Reflection isn't a guarantee** — the refinement step is prompted to sanity-check signed/aggregation results, but it's still a single LLM pass and can miss subtler correctness issues.
-- **Shallow conversation memory** — follow-up context carries only the immediately previous turn's question and SQL, not the full chat history.
-- **No automated test suite yet** — correctness has been spot-checked manually against the sample database rather than covered by tests.
-
----
-
 ## What's Next
 
 - Sandbox/limit SQL execution (read-only connection, statement allowlist, timeouts) for safer multi-user use
@@ -170,4 +150,4 @@ The app opens automatically at `http://localhost:8501`. On first launch it draws
 
 ## Author
 
-Built by **Amir** as a hands-on exploration of agentic design patterns (reflection, self-correction) and LLM application development.
+Built by **Amir Piltan** as a hands-on exploration of agentic design patterns (reflection, self-correction) and LLM application development.
