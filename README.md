@@ -28,9 +28,7 @@ It's a working prototype built to explore the **reflection pattern** in agentic 
 
 ## Demo
 
-![demo screenshot](assets/demo.png)
-
-The screenshot above is real app output: an actual sign-convention bug this project hit during development, kept in as the demo because it's a good illustration of what the reflection step is *for* — V1 sums a signed column without correcting for it, ranks backwards, and returns a negative number; the reflection step catches that (the query ran fine, but a negative "units sold" is a sign of a bug, not a valid answer), and V2 returns the correct ranking.
+![demo screenshot](demo.gif)
 
 ---
 
