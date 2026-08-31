@@ -1,0 +1,7 @@
+streamlit>=1.35
+pandas>=2.0
+python-dotenv>=1.0
+aisuite[openai]>=0.1.6
+openai>=1.30
+tabulate>=0.9
+ipython>=8.0
