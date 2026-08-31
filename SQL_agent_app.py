@@ -1,9 +1,3 @@
-# to run the app, open the terminal and type:
-# make sure AI_Learning is active
-
-# Then in terminal run this two lines:
-# cd 'Documents/GenAI projects/AI SQL Agent/'
-# streamlit run SQL_agent_app.py
 
 """
 Streamlit front end for the SQL Agent (SQL_agent.py + utils.py) — branded
